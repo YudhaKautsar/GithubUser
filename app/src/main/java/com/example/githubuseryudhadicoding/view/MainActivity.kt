@@ -1,4 +1,4 @@
-package com.example.githubuseryudhadicoding
+package com.example.githubuseryudhadicoding.view
 
 import android.app.SearchManager
 import android.content.Context
@@ -7,10 +7,15 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.Menu
+import android.view.MenuItem
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.widget.SearchView
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.githubuseryudhadicoding.AboutActivity
+import com.example.githubuseryudhadicoding.R
+import com.example.githubuseryudhadicoding.model.Users
+import com.example.githubuseryudhadicoding.viewmodel.ListUserAdapter
 import com.loopj.android.http.AsyncHttpClient
 import com.loopj.android.http.AsyncHttpResponseHandler
 import cz.msebera.android.httpclient.Header
@@ -64,6 +69,17 @@ class MainActivity : AppCompatActivity() {
         return true
     }
 
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when(item.itemId) {
+            R.id.about -> {
+                val i = Intent(this, AboutActivity::class.java)
+                startActivity(i)
+                return true
+            }
+            else -> return true
+        }
+    }
+
 
     private fun getDataUser() {
         progressBar.visibility = View.VISIBLE
@@ -93,7 +109,7 @@ class MainActivity : AppCompatActivity() {
                     e.printStackTrace()
                 }
             }
-
+            //Jika koneksi gagal
             override fun onFailure(
                 statusCode: Int,
                 headers: Array<Header>,
@@ -113,12 +129,12 @@ class MainActivity : AppCompatActivity() {
         })
     }
 
-    private fun getDataDetail(id: String) {
+    private fun getDataDetail(login: String) {
         progressBar.visibility = View.VISIBLE
         val client = AsyncHttpClient()
         client.addHeader("Authorization", "token 72e5ac5a6f270bd7335af61bf11e9794c4d0ea03")
         client.addHeader("User-Agent", "request")
-        val url = "https://api.github.com/users/$id"
+        val url = "https://api.github.com/users/$login"
         client.get(url, object : AsyncHttpResponseHandler() {
             override fun onSuccess(
                 statusCode: Int,
@@ -170,12 +186,12 @@ class MainActivity : AppCompatActivity() {
         })
     }
 
-    private fun getDataUserSearch(id: String) {
+    private fun getDataUserSearch(login: String) {
         progressBar.visibility = View.VISIBLE
         val client = AsyncHttpClient()
         client.addHeader("Authorization", "token 72e5ac5a6f270bd7335af61bf11e9794c4d0ea03")
         client.addHeader("User-Agent", "request")
-        val url = "https://api.github.com/search/users?q=$id"
+        val url = "https://api.github.com/search/users?q=$login"
         client.get(url, object : AsyncHttpResponseHandler() {
             override fun onSuccess(
                 statusCode: Int,
@@ -245,7 +261,5 @@ class MainActivity : AppCompatActivity() {
         toDetails.putExtra(DetailActivity.EXTRA_DATA, users)
         startActivity(toDetails)
     }
-
-
 
 }

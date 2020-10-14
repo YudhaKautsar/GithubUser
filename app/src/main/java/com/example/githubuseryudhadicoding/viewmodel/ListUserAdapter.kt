@@ -1,4 +1,4 @@
-package com.example.githubuseryudhadicoding
+package com.example.githubuseryudhadicoding.viewmodel
 
 import android.view.LayoutInflater
 import android.view.View
@@ -6,6 +6,8 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
+import com.example.githubuseryudhadicoding.R
+import com.example.githubuseryudhadicoding.model.Users
 import kotlinx.android.synthetic.main.item_row_user.view.*
 import kotlin.collections.ArrayList
 

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@android:color/holo_blue_light"
-    tools:context=".DetailActivity">
+    tools:context=".view.DetailActivity">
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/avatar"
@@ -51,14 +51,13 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="300dp"
-        style="@style/TextAppearance.MaterialComponents.Button"
         android:background="@android:color/white"
         android:minHeight="?actionBarSize"
         app:tabIndicatorFullWidth="false"
         app:tabIndicatorHeight="2dp"
         app:tabMode="fixed"
         app:tabRippleColor="@null"
-        app:tabTextColor="@android:color/black" />
+        app:tabTextColor="@android:color/black"/>
 
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/view_pager"

@@ -1,4 +1,4 @@
-package com.example.githubuseryudhadicoding
+package com.example.githubuseryudhadicoding.model
 
 import android.os.Parcelable
 import kotlinx.android.parcel.Parcelize

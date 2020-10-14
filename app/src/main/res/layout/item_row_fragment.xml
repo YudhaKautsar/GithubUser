@@ -7,15 +7,16 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/user_avatar"
+        android:id="@+id/fragment_avatar"
         android:layout_width="50dp"
         android:layout_height="50dp"
+        android:contentDescription="@string/avatar"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:src="@android:color/darker_gray" />
 
     <TextView
-        android:id="@+id/users_name"
+        android:id="@+id/users_name_fragment"
         android:layout_width="0dp"
         android:layout_marginTop="4dp"
         android:layout_height="wrap_content"
@@ -24,18 +25,18 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/user_avatar"
-        app:layout_constraintTop_toTopOf="@+id/user_avatar"
+        app:layout_constraintStart_toEndOf="@+id/fragment_avatar"
+        app:layout_constraintTop_toTopOf="@+id/fragment_avatar"
         tools:text="@string/users_name" />
 
     <TextView
-        android:id="@+id/username"
+        android:id="@+id/username_fragment"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="12dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/user_avatar"
-        app:layout_constraintTop_toBottomOf="@+id/users_name"
+        app:layout_constraintStart_toEndOf="@+id/fragment_avatar"
+        app:layout_constraintTop_toBottomOf="@+id/users_name_fragment"
         tools:text="@string/username" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
