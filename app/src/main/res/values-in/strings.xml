@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Github User (Yudha Dicoding)</string>
+    <string name="users_name">Nama Lengkap</string>
+    <string name="username">Nama Pengguna</string>
+    <string name="followers">Pengikut</string>
+    <string name="following">Mengikuti</string>
+    <string name="total">5000</string>
+    <string name="menu_search">Cari</string>
+    <string name="menu_about">Tentang</string>
+    <string name="search_hint">Masukkan kata</string>
+    <string name="avatar">foto</string>
+    <string name="dev_email">yudhakautsar20@gmail.com</string>
+    <string name="dev_name">Muhammad Yudha Kautsar</string>
+    <string name="change_language_settings">Ganti Bahasa</string>
+</resources>

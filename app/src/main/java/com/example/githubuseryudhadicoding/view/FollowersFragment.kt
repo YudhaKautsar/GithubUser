@@ -55,7 +55,6 @@ class FollowersFragment : Fragment() {
                 headers: Array<Header>,
                 responseBody: ByteArray
             ) {
-                //Jika Koneksi berhasil
                 progressBarFollowers.visibility = View.INVISIBLE
                 val result = String(responseBody)
                 Log.d(TAG, result)

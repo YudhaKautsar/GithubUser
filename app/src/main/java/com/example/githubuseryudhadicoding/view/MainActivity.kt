@@ -5,6 +5,7 @@ import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.provider.Settings
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
@@ -12,7 +13,6 @@ import android.view.View
 import android.widget.Toast
 import androidx.appcompat.widget.SearchView
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.githubuseryudhadicoding.AboutActivity
 import com.example.githubuseryudhadicoding.R
 import com.example.githubuseryudhadicoding.model.Users
 import com.example.githubuseryudhadicoding.viewmodel.ListUserAdapter
@@ -55,7 +55,7 @@ class MainActivity : AppCompatActivity() {
             override fun onQueryTextSubmit(query: String): Boolean {
                 if (query.isEmpty()) {
                     return true
-                }else {
+                } else {
                     listUser.clear()
                     getDataUserSearch(query)
                 }
@@ -70,13 +70,18 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when(item.itemId) {
+        return when (item.itemId) {
             R.id.about -> {
-                val i = Intent(this, AboutActivity::class.java)
-                startActivity(i)
-                return true
+                val toAbout = Intent(this, AboutActivity::class.java)
+                startActivity(toAbout)
+                true
             }
-            else -> return true
+            R.id.action_change_settings -> {
+                val toChange = Intent(Settings.ACTION_LOCALE_SETTINGS)
+                startActivity(toChange)
+                true
+            }
+            else -> true
         }
     }
 

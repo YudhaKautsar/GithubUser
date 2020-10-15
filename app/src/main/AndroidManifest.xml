@@ -14,8 +14,11 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
         tools:targetApi="m">
-        <activity android:name=".AboutActivity"></activity>
-        <activity android:name=".view.DetailActivity" />
+        <activity
+            android:name=".view.AboutActivity"
+            android:parentActivityName=".view.MainActivity"/>
+        <activity android:name=".view.DetailActivity"
+            android:parentActivityName=".view.MainActivity"/>
         <activity android:name=".view.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
